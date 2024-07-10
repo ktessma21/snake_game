@@ -1,6 +1,5 @@
 from turtle import Turtle
 
-
 STARTING_POSITION = [(0,0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -59,3 +58,12 @@ class Snake:
             if self.head.distance(turtle) < 10:
                 return True
         return False
+    
+    def reset(self):
+        for segment in self.segments:
+            segment.goto((1000, 1000))
+        self.segments = []
+        for i in range(3):
+            self.add_segment(STARTING_POSITION[i])
+        self.head = self.segments[0]
+
