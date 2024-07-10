@@ -37,9 +37,8 @@ while is_game_on:
     
     # Detect collision with wall
     if snake.is_wall_collision() or snake.is_running_over_itself():
-        is_game_on = False
         scoreboard.game_over()
-        print("Over!")
+        snake.reset()
 
 
 screen.exitonclick()
